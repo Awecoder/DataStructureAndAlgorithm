@@ -1,7 +1,5 @@
 package com.lzp.algorithm.sort;
 
-import java.util.Arrays;
-
 /**
  * 选择排序代码实现
  * 算法复杂度0(n^2)
@@ -22,6 +20,9 @@ public class SelectionSort {
      * 实现思想：
      * 假设对数组从小到大排序，从数组0位置开始，
      * 不断寻找当前位置到length-1位置最小值替换当前位置的值
+     *
+     * 选择排序的优化思路：
+     * 遍历一次可以同时找到当前未处理元素的最大值和最小值。
      * </pre>
      *
      * @param arr 要进行排序的数组
