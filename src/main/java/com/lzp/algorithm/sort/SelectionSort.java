@@ -50,8 +50,13 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        Integer[] a = {10, 8, 2, 4, 5, 2, 1};
-        SelectionSort.sort(a);
-        System.out.println(Arrays.toString(a));
+//        // 1
+////        Integer[] arr = Sorts.generateRandomArray(100, 0, 10000);
+////        SelectionSort.sort(arr);
+////        Sorts.print(arr);
+
+        // 2
+        Integer[] arr = Sorts.generateRandomArray(10000, 0, 10000);
+        Sorts.isSorted("com.lzp.algorithm.sort.SelectionSort", arr);
     }
 }
