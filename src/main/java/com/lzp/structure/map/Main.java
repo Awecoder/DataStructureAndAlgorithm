@@ -19,7 +19,7 @@ public class Main {
 
         List<String> words = new ArrayList<>();
         if (FileUtils.readFile("./src/main/resources/book.txt", words)) {
-            System.out.println("Total words: " + words.size());
+//            System.out.println("Total words: " + words.size());
             for (String word : words) {
                 if (map.contains(word)) {
                     map.set(word, map.get(word) + 1);
@@ -27,9 +27,9 @@ public class Main {
                     map.add(word, 1);
                 }
             }
-            System.out.println("Total diff words: " + map.getSize());
-            System.out.println("Frequency of pride: " + map.get("pride"));
-            System.out.println("Frequency of prejudice: " + map.get("prejudice"));
+//            System.out.println("Total diff words: " + map.getSize());
+//            System.out.println("Frequency of pride: " + map.get("pride"));
+//            System.out.println("Frequency of prejudice: " + map.get("prejudice"));
         }
 
 
@@ -38,11 +38,20 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        // LinkedListMap
         Map<String, Integer> map1 = new LinkedListMap<>();
         double time1 = testMap(map1);
         System.out.println("LinkedListMap time costs : " + time1 + "s");
+
+        // BSTMap
         Map<String, Integer> map2 = new BSTMap<>();
         double time2 = testMap(map2);
         System.out.println("BSTMap time costs : " + time2 + "s");
+
+        // AVLMap
+        Map<String, Integer> map3 = new AVLMap<>();
+        double time3 = testMap(map3);
+        System.out.println("AVLMap time costs : " + time3 + " s");
+
     }
 }
