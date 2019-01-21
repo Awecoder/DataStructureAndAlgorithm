@@ -95,7 +95,7 @@ public class Sorts {
             assert isSorted(arr);
 
             System.out.println(sortClass.getSimpleName() + ": " + (endTime - startTime) + "ms");
-            Sorts.print(arr);
+//            Sorts.print(arr);
         } catch (Exception e) {
             e.printStackTrace();
         }
