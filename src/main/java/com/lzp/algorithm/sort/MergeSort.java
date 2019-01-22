@@ -6,7 +6,9 @@ package com.lzp.algorithm.sort;
  * 归并排序基于分治的思想，将数组区间分成两个子数组，分别排序，再将有序的子数组归并为完整数组。
  * 适用于稳定性高，空间复杂度要求不苛刻的情况 时间复杂度O(nlogn)
  *
- * 在对归并排序进行优化后，归并排序快于希尔排序
+ * 在对归并排序进行优化后，归并排序快于希尔排序.
+ *
+ * 归并排序实现的难点，在于索引的维护。
  * </pre>
  *
  * @author lzp
@@ -93,14 +95,14 @@ public class MergeSort {
      * 对arr[left...right]区间使用插入排序
      *
      * @param arr 原始数组
-     * @param l   要排序数组区间的左边界
-     * @param r   要排序数组区间的右边界
+     * @param left   要排序数组区间的左边界
+     * @param right   要排序数组区间的右边界
      */
-    public static void insertSort(Comparable[] arr, int l, int r) {
-        for (int i = l + 1; i <= r; i++) {
+    public static void insertSort(Comparable[] arr, int left, int right) {
+        for (int i = left + 1; i <= right; i++) {
             Comparable e = arr[i];
             int j = i;
-            for (; j > l && arr[j - 1].compareTo(e) > 0; j--) {
+            for (; j > left && arr[j - 1].compareTo(e) > 0; j--) {
                 arr[j] = arr[j - 1];
             }
             arr[j] = e;
