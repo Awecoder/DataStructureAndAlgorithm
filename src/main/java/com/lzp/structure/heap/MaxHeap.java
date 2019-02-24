@@ -113,6 +113,7 @@ public class MaxHeap<E extends Comparable<E>> {
             index = parent(index);
         }
     }
+    
     // 下沉操作
     // 当从最大堆中取出元素后，会留下空位置
     // 取数组最后的元素，放置于堆首位置
