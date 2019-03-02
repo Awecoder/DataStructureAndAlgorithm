@@ -10,8 +10,8 @@ public class MaxHeap<E extends Comparable<E>> {
     /**
      * 底层采用自定义数组来实现
      * <pre>
-     *     由于采用已有实现，数组元素从0索引位置开始
-     *     父节点位置 = (i-1) / 2
+     *     由于采用已有实现，数组元素从【0】索引位置开始
+     *     父节点位置 = (i - 1) / 2
      *     左节点位置 = 2 * i + 1
      *     右节点位置 = 2 * i + 2
      * </pre>
@@ -33,8 +33,9 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public MaxHeap(E[] arr) {
         data = new Array<>(arr);
-        // heapify操作
+        // heapify操作：从倒数第二层元素开始不断下沉
         for (int i = parent(arr.length - 1); i >= 0; i--) {
+            // 元素下沉
             siftDown(i);
         }
     }
@@ -113,7 +114,7 @@ public class MaxHeap<E extends Comparable<E>> {
             index = parent(index);
         }
     }
-    
+
     // 下沉操作
     // 当从最大堆中取出元素后，会留下空位置
     // 取数组最后的元素，放置于堆首位置

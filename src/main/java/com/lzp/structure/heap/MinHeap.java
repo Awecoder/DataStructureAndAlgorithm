@@ -121,9 +121,10 @@ public class MinHeap<E extends Comparable<? super E>> {
             if (child + 1 <= size && data[child].compareTo(data[child + 1]) > 0) {
                 child++;
             }
-            if (data[index].compareTo(data[child]) > 0) {
-                swap(index, child);
+            if (data[index].compareTo(data[child]) < 0) {
+                break;
             }
+            swap(index, child);
             index = child;
         }
     }
